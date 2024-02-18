@@ -1,43 +1,69 @@
 import java.util.Scanner;
+
 public class pemilihan {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int nilaiTugas, nilaiKuis, nilaiUTS, nilaiUAS;
-        float nilaiAkhir;
 
+        System.out.println("==============================");
         System.out.println("Program Menghitung Nilai Akhir");
-        System.out.print("Masukkan nilai tugas = ");
-        nilaiTugas = input.nextInt();
-        System.out.print("Masukkan nilai kuis = ");
-        nilaiKuis = input.nextInt();
-        System.out.print("Masukkan nilai UTS = ");
-        nilaiUTS = input.nextInt();
-        System.out.print("Masukkan nilai UAS = ");
-        nilaiUAS = input.nextInt();
+        System.out.println("==============================");
 
-        if (nilaiTugas > 100 || nilaiKuis > 100 || nilaiUTS > 100 || nilaiUAS > 100) {
-            System.out.println("============================");
-            System.out.println("nilai tidak valid");
+        System.out.print("Masukkan nilai tugas: ");
+        float tugas = input.nextFloat();
+        
+        System.out.print("Masukkan nilai kuis: ");
+        float kuis = input.nextFloat();
+        
+        System.out.print("Masukkan nilai UTS: ");
+        float uts = input.nextFloat();
+        
+        System.out.print("Masukkan nilai UAS: ");
+        float uas = input.nextFloat();
+
+        input.close();
+
+        System.out.println("==============================");
+        System.out.println("==============================");
+
+        if (tugas > 100 || kuis > 100 || uts > 100 || uas > 100) {
+            System.out.println("Tidak Valid");
+            System.out.println("==============================");
+            System.out.println("==============================");
         } else {
-            System.out.println("============================");
-            nilaiAkhir = (nilaiTugas + nilaiKuis + nilaiUTS + nilaiUAS) / 4;
-            System.out.println("nilai akhir: " + nilaiAkhir);
-
-            if (nilaiAkhir > 80 && nilaiAkhir <= 100) {
-                System.out.println("nilai huruf: A");
-            } else if (nilaiAkhir > 73 && nilaiAkhir <= 80) {
-                System.out.println("nilai huruf: B+");
-            } else if (nilaiAkhir > 65 && nilaiAkhir <= 73) {
-                System.out.println("nilai huruf: B");
-            } else if (nilaiAkhir > 60 && nilaiAkhir <= 65) {
-                System.out.println("nilai huruf: C+");
-            } else if (nilaiAkhir > 50 && nilaiAkhir <= 60) {
-                System.out.println("nilai huruf: C");
-            } else if (nilaiAkhir > 39 && nilaiAkhir <= 50) {
-                System.out.println("nilai huruf: D");
-            } else {
-                System.out.println("nilai huruf: E");
+            float total = (tugas * 0.2F) + (kuis * 0.2F) + (uts * 0.3F) + (uas * 0.3F);
+            if(total>80&&total<=100){
+                System.out.println("Nilai akhir= " +total);
+                System.out.println("Nilai huruf = A");
+            }else if (total>73&&total>= 80){
+                System.out.println("Nilai akhir " +total);
+                System.out.println("Nilai huruf = B");
+            }else if (total>60&&total>=73){
+                System.out.println("Nilai akhir " +total);
+                System.out.println("Nilai huruf = B+");
+            }else if (total>60&&total>= 65){
+                System.out.println("Nilai akhir " +total);
+                System.out.println("Nilai Huruf = C+");
+            }else if (total>50&&total>= 60){
+                System.out.println("Nilai akhir " +total);
+                System.out.println("Nilai Huruf = C");
+            }else if (total>39&&total>= 50){
+                System.out.println("Nilai akhir " +total);
+                System.out.println("Nilai huruf = D");
+            }else if (total<=39){
+                System.out.println("Nilai akhir " +total);
+                System.out.println("Nilai huruf = E");
             }
+            if (total >= 50) {
+                System.out.println("==============================");
+                System.out.println("==============================");
+                System.out.println("SELAMAT ANDA LULUS");
+                System.out.println("==============================");
+            } else {
+                System.out.println("==============================");
+                System.out.println("==============================");
+                System.out.println("ANDA TIDAK LULUS");
+            }
+            System.out.println("==============================");
         }
     }
 }

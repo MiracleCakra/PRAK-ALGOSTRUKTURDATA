@@ -17,10 +17,10 @@ Nama: Cakra Wangsa M.A.W, Prodi:D4TI, Kelas:1H, Absen:07
 
         a. Input dari kode program
 
-    <img src="input pemilihan.png">
+    <img src="in pemilihan update.png">
 
         b. Output dari kode program
-    <img src="output pemilihan.png">
+    <img src="out pemilihan update.png">
 
 
 
