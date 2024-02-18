@@ -72,11 +72,12 @@ Nama: Cakra Wangsa M.A.W, Prodi:D4TI, Kelas:1H, Absen:07
 
         a.Input pada kode program
 
-<img src="in fungsi.png">
+<img src="in fungsi update.png">
 
     b.Output pada kode program
 
-<img src="out fungsi.png">
+<img src="out fungsi update.png">
+<img src="out fungsi2 update.png">
 
 
 ## TUGAS
@@ -84,10 +85,10 @@ Nama: Cakra Wangsa M.A.W, Prodi:D4TI, Kelas:1H, Absen:07
 1. Susun program untuk membuat dua buah array berikut isinya sebagai berikut. Array pertama adalah array satu dimensi char KODE[10], berisi kode plat mobil. Array kedua, array dua dimensi char KOTA[10][12] berisi nama kota yang berpasangan dengan kode plat mobil. Ketika pengguna memberikan input kode plat nomor maka program akan mengeluarkan nama kota dari kode plat nomor tersebut.
 
         a. Input pada kode program
-<img src= "in tugas plat.png">
+<img src= "in plat update.png">
 
      b.Output pada kode program
-<img src= "out tugas plat.png">
+<img src= "out plat update.png">
 
 
 2. Buat program untuk menghitung rumus kecepatan, jarak, dan waktu Berikut adalah persamaan untuk menghitung rumus tersebut :
@@ -113,7 +114,7 @@ Nama: Cakra Wangsa M.A.W, Prodi:D4TI, Kelas:1H, Absen:07
 
 
         a. Input pada kode program
-<img src= "in hitung rumus.png">
+<img src= "in rumus update.png">
 
     b. Output pada kode program
-<img src="out hitung rumus.png">
+<img src="out rumus update.png">

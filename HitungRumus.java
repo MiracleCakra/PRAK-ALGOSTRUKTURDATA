@@ -1,14 +1,15 @@
 import java.util.Scanner;
+
 public class HitungRumus {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Menghitung Rumus Fisika");
-        System.out.println("Pilihan Rumus");
-        System.out.println("1. Rumus mencari Kecepatan");
-        System.out.println("2. Rumus mencari Jarak");
-        System.out.println("3. Rumus mencari Waktu");
-        System.out.print("Masukkan pilihan rumus: ");
+        System.out.println("Pilih rumus yang ingin dihitung:");
+        System.out.println("1. Kecepatan");
+        System.out.println("2. Jarak");
+        System.out.println("3. Waktu");
+        System.out.print("1/2/3: ");
+
         int pilihan = input.nextInt();
 
         switch (pilihan) {
@@ -22,37 +23,49 @@ public class HitungRumus {
                 hitungWaktu();
                 break;
             default:
-                System.out.println("Pilihan rumus tidak ada");
+                System.out.println("Pilihan tidak valid.");
         }
     }
 
-    static void hitungKecepatan() {
+    public static void hitungKecepatan() {
         Scanner input = new Scanner(System.in);
-        System.out.println("Anda memasuki perhitungan rumus KECEPATAN");
-        System.out.print("Masukkan nilai jarak(s) dalam satuan km: ");
-        float jarak = input.nextFloat();
-        System.out.print("Masukkan nilai waktu(t) dalam satuan jam: ");
-        float waktu = input.nextFloat();
-        System.out.println("Nilai kecepatannya adalah: " + (jarak / waktu) + " km/jam");
+
+        System.out.print("Masukkan jarak (s): ");
+        double jarak = input.nextDouble();
+
+        System.out.print("Masukkan waktu (t): ");
+        double waktu = input.nextDouble();
+
+        double kecepatan = jarak / waktu;
+
+        System.out.println("Kecepatan (v): " + kecepatan);
     }
 
-    static void hitungJarak() {
+    private static void hitungJarak() {
         Scanner input = new Scanner(System.in);
-        System.out.println("Anda memasuki perhitungan rumus JARAK");
-        System.out.print("Masukkan nilai kecepatan(v) dalam satuan km/jam: ");
-        float kecepatan = input.nextFloat();
-        System.out.print("Masukkan nilai waktu(t) dalam satuan jam: ");
-        float waktu = input.nextFloat();
-        System.out.println("Nilai jarak adalah: " + (kecepatan * waktu) + " km");
+
+        System.out.print("Masukkan kecepatan (v): ");
+        double kecepatan = input.nextDouble();
+
+        System.out.print("Masukkan waktu (t): ");
+        double waktu = input.nextDouble();
+
+        double jarak = kecepatan * waktu;
+
+        System.out.println("Jarak (s): " + jarak);
     }
 
-    static void hitungWaktu() {
+    private static void hitungWaktu() {
         Scanner input = new Scanner(System.in);
-        System.out.println("Anda memasuki perhitungan rumus WAKTU");
-        System.out.print("Masukkan nilai jarak(s) dalam satuan km: ");
-        float jarak = input.nextFloat();
-        System.out.print("Masukkan nilai kecepatan(v) dalam satuan km/jam: ");
-        float kecepatan = input.nextFloat();
-        System.out.println("Nilai waktu adalah: " + (jarak / kecepatan) + " jam");
+
+        System.out.print("Masukkan jarak (s): ");
+        double jarak = input.nextDouble();
+
+        System.out.print("Masukkan kecepatan (v): ");
+        double kecepatan = input.nextDouble();
+
+        double waktu = jarak / kecepatan;
+
+        System.out.println("Waktu (t): " + waktu);
     }
 }
