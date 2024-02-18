@@ -1,78 +1,76 @@
 import java.util.Scanner;
-
 public class Array {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Jumlah matakuliah: ");
+        int jumlahMatakuliah = scanner.nextInt();
         
-        String[] matkul = {"Pancasila", "KTI", "CTPS", "MatDas", "BING", "DasPro", "PrakDasPro", "K3"};
-        int[] bobotsks = {2, 2, 2, 3, 2, 2, 3, 2};
+        String[] namaMatakuliah = new String[jumlahMatakuliah];
+        int[] bobotSKS = new int[jumlahMatakuliah];
+        int[] nilaiAngka = new int[jumlahMatakuliah];
+        String[] nilaiHuruf = new String[jumlahMatakuliah];
+        double[] bobotNilai = new double[jumlahMatakuliah];
 
-        double[] nilaiMatkul = new double[matkul.length];
+        for (int i = 0; i < jumlahMatakuliah; i++) {
+            System.out.println("\nMatakuliah ke-" + (i + 1));
+            scanner.nextLine();
+            System.out.print("Nama Matakuliah: ");
+            namaMatakuliah[i] = scanner.nextLine();
+            System.out.print("Bobot SKS: ");
+            bobotSKS[i] = scanner.nextInt();
+            System.out.print("Nilai Angka: ");
+            nilaiAngka[i] = scanner.nextInt();
 
-        System.out.println("=====================");
-        System.out.println("Program Menghitung IP Semester");
-        System.out.println("=====================");
-
-        for (int i = 0; i < matkul.length; i++) {
-            System.out.print("Masukkan nilai untuk matkul " + matkul[i] + ": ");
-            
-            while (!scanner.hasNextDouble()) {
-                System.out.println("Masukkan nilai yang benar.");
-                scanner.next();
-                System.out.print("Masukkan nilai untuk matkul " + matkul[i] + ": ");
-            }
-
-            nilaiMatkul[i] = scanner.nextDouble();
+            nilaiHuruf[i] = konversiNilaiAngkaKeHuruf(nilaiAngka[i]);
+            bobotNilai[i] = konversiNilaiAngkaKeBobot(nilaiAngka[i]);
         }
 
-        double totalSKS = 18;
-        double totalNilaiBobot = 0;
+        System.out.println("\nOutput:");
 
-        String[] nilaiHuruf = new String[matkul.length];
-        double[] bobot = new double[matkul.length];
-
-        for (int i = 0; i < matkul.length; i++) {
-            if (nilaiMatkul[i] > 80 && nilaiMatkul[i] <= 100) {
-                nilaiHuruf[i] = "A";
-                bobot[i] = 4;
-            } else if (nilaiMatkul[i] > 73 && nilaiMatkul[i] <= 80) {
-                nilaiHuruf[i] = "B+";
-                bobot[i] = 3.5;
-            } else if (nilaiMatkul[i] > 65 && nilaiMatkul[i] <= 73) {
-                nilaiHuruf[i] = "B";
-                bobot[i] = 3;
-            } else if (nilaiMatkul[i] > 60 && nilaiMatkul[i] <= 65) {
-                nilaiHuruf[i] = "C+";
-                bobot[i]= 2.5;
-            } else if (nilaiMatkul[i] > 50 && nilaiMatkul[i] <= 60) {
-                nilaiHuruf[i] = "C";
-                bobot[i] = 2;
-            } else if (nilaiMatkul[i] >= 39 && nilaiMatkul[i] <= 50) {
-                nilaiHuruf[i] = "E";
-                bobot[i] = 0;
-            } else if (nilaiMatkul[i] >= 39) {
-                nilaiHuruf[i] = "E";
-                bobot[i] = 0;
-            }
+        for (int i = 0; i < jumlahMatakuliah; i++) {
+            System.out.println("Matakuliah: " + namaMatakuliah[i]);
+            System.out.println("Nilai Angka: " + nilaiAngka[i]);
+            System.out.println("Nilai Huruf: " + nilaiHuruf[i]);
+            System.out.println("Bobot Nilai: " + bobotNilai[i]);
+            System.out.println("Bobot SKS: " + bobotSKS[i]);
+            System.out.println("-----------------------------");
         }
+    }
 
-        for (int i = 0; i < bobot.length; i++) {
-            totalNilaiBobot += bobot[i] * bobotsks[i];
+    public static String konversiNilaiAngkaKeHuruf(int nilaiAngka) {
+        if (nilaiAngka >= 80 && nilaiAngka <= 100) {
+            return "A";
+        } else if (nilaiAngka >= 73 && nilaiAngka < 80) {
+            return "B+";
+        } else if (nilaiAngka >= 65 && nilaiAngka < 73) {
+            return "B";
+        } else if (nilaiAngka >= 60 && nilaiAngka < 65) {
+            return "C+";
+        } else if (nilaiAngka >= 50 && nilaiAngka < 60) {
+            return "C";
+        } else if (nilaiAngka >= 39 && nilaiAngka < 50) {
+            return "D";
+        } else {
+            return "E";
         }
+    }
 
-        double IP = totalNilaiBobot / totalSKS;
-
-        System.out.println("========================");
-        System.out.println("Hasil Konversi Nilai:");
-        System.out.println("========================");
-        System.out.printf("%-15s %-15s %-15s %-15s\n", "MK", "Nilai Angka", "Nilai Huruf", "Bobot Nilai");
-        for (int i = 0; i < matkul.length; i++) {
-            System.out.printf("%-15s %-15s %-15s %-15s\n", matkul[i], nilaiMatkul[i], nilaiHuruf[i], bobot[i]);
+    public static double konversiNilaiAngkaKeBobot(int nilaiAngka) {
+        if (nilaiAngka >= 80 && nilaiAngka <= 100) {
+            return 4.0;
+        } else if (nilaiAngka >= 73 && nilaiAngka < 80) {
+            return 3.5;
+        } else if (nilaiAngka >= 65 && nilaiAngka < 73) {
+            return 3.0;
+        } else if (nilaiAngka >= 60 && nilaiAngka < 65) {
+            return 2.5;
+        } else if (nilaiAngka >= 50 && nilaiAngka < 60) {
+            return 2.0;
+        } else if (nilaiAngka >= 39 && nilaiAngka < 50) {
+            return 1.0;
+        } else {
+            return 0.0;
         }
-
-        System.out.println("========================");
-        System.out.printf("IP: %.2f\n", IP);
-
-        scanner.close();
     }
 }

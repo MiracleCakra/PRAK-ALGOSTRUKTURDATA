@@ -2,10 +2,10 @@ import java.util.Scanner;
 public class PlatKota {
     public static void main(String[] args) {
         System.out.println("Program Mencari Nama Kota Sesuai dg Plat Nomer");
-        char[] KODE = {'A', 'B', 'D', 'E', 'F', 'G', 'H', 'L', 'N', 'T'};
+        char[] KODE = {'A', 'B', 'D', 'M', 'F', 'W', 'H', 'L', 'N', 'Z'};
         String[][] KOTA = {
-                {"Banten", "Jakarta", "Bandung", "Cirebon", "Bogor",
-                "Pekalongan", "Semarang", "Surabaya", "Malang", "tegal"}
+                {"Banten", "DKI Jakarta", "Bandung", "Madura", "Bogor",
+                "Sidoarjo", "Semarang", "Surabaya", "Malang", "Sumedang"}
         };
         Scanner scanner = new Scanner(System.in);
         System.out.print("Masukkan kode plat nomor: ");
